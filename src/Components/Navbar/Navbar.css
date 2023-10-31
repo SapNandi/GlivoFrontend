@@ -1,0 +1,100 @@
+.navbar {
+  width: 100%;
+  overflow: hidden;
+  height: 9.5vh;
+  /* display: flex; */
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8.5rem 0 2rem;
+  position: fixed;
+  top: 0;
+  background: rgb(51, 53, 69);
+  z-index: 100;
+}
+
+.navbar .leftNav {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar .rightNav {
+  display: flex;
+  flex: 2;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .leftNav .Logo{
+  /* border: 1px solid #fff; */
+  font-family: "Poppins";
+  font-weight: 600;
+}
+
+.navbar .leftNav .Logo img{
+  height: auto;
+  object-fit: contain;
+  width: 180px;
+}
+
+.navbar .rightNav .items {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .rightNav .items .item {
+  list-style: none;
+}
+
+.navbar .rightNav .items .item > a {
+  text-decoration: none;
+  font-family: "Roboto";
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  height: 100%;
+  flex: 0.5;
+}
+
+.profile .profileTitle {
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+.wrapBox {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+.speedDialIcon {
+  width: 66px;
+  height: 66px;
+  border-radius: 100%;
+  /* position: absolute;
+    width: 68px;
+    height: 68px;
+    border-radius: 100%;
+    position: absolute;
+    top: 55px; */
+}
