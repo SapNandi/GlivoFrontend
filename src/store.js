@@ -10,7 +10,7 @@ import {
   productReducer,
 } from "./reducers/productReducer";
 import { userReducer } from "./reducers/userReducer";
-import { cartReducer } from "./reducers/cartreducer";
+import { cartReducer } from "./reducers/cartReducer";
 import { newOrderReducer, myOrdersReducer } from "./reducers/orderReducer";
 
 const reducer = combineReducers({
