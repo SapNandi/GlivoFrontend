@@ -32,7 +32,7 @@ const OrderDetails = () => {
       ) : (
         <div className="orderDetails">
           {isAuthenticated ? (
-            order && order.orderItems !== undefined ? (
+            order.orderItems !== undefined ? (
               order.orderItems.map((item, index) => {
                 return <OrderCard key={index} item={item} />;
               })
@@ -61,9 +61,7 @@ const OrderDetails = () => {
             >
               <div className="subTotal">
                 <p>In Total: </p>
-                <p>
-                  {isAuthenticated ? order.totalPrice.toFixed(2) : ""}
-                </p>
+                <p>{isAuthenticated ? order.totalPrice : ""}</p>
               </div>
               <div className="subTotal">
                 <p>Tax Inclusions: </p>
@@ -71,9 +69,7 @@ const OrderDetails = () => {
               </div>
               <div className="subTotal">
                 <p>Grand Total: </p>
-                <p>
-                  {isAuthenticated ? order.totalPrice.toFixed(2) : ""}
-                </p>
+                <p>{isAuthenticated ? order.totalPrice : ""}</p>
               </div>
             </Paper>
           </Box>
