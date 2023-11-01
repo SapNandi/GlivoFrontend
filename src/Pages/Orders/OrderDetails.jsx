@@ -17,6 +17,7 @@ const OrderDetails = () => {
   const alert = useAlert();
 
   useEffect(() => {
+    console.log(order);
     if (isAuthenticated === true) {
       dispatch(getOrderDetails(id));
     } else {
