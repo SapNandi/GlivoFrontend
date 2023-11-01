@@ -62,17 +62,17 @@ const OrderDetails = () => {
               <div className="subTotal">
                 <p>In Total: </p>
                 <p>
-                  {isAuthenticated ? order && order.totalPrice.toFixed(2) : ""}
+                  {isAuthenticated ? order.totalPrice.toFixed(2) : ""}
                 </p>
               </div>
               <div className="subTotal">
                 <p>Tax Inclusions: </p>
-                <p>{isAuthenticated ? order && order.taxPrice : ""}</p>
+                <p>{isAuthenticated ? order.taxPrice : ""}</p>
               </div>
               <div className="subTotal">
                 <p>Grand Total: </p>
                 <p>
-                  {isAuthenticated ? order && order.totalPrice.toFixed(2) : ""}
+                  {isAuthenticated ? order.totalPrice.toFixed(2) : ""}
                 </p>
               </div>
             </Paper>
