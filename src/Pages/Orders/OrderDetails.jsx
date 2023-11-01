@@ -18,15 +18,12 @@ const OrderDetails = () => {
 
   useEffect(() => {
     if (isAuthenticated === true) {
-      if (error) {
-        alert.error(error);
-        dispatch(clearErrors());
-      }
       dispatch(getOrderDetails(id));
     } else {
+      alert.info("Login to access!!!");
       navigate("/loginSignup");
     }
-  }, [dispatch, alert, error, id]);
+  }, [dispatch, loading, id]);
   return (
     <>
       {loading ? (
@@ -59,7 +56,9 @@ const OrderDetails = () => {
             >
               <div className="subTotal">
                 <p>In Total: </p>
-                <p>{isAuthenticated ? order && (order.totalPrice).toFixed(2) : ""}</p>
+                <p>
+                  {isAuthenticated ? order && order.totalPrice.toFixed(2) : ""}
+                </p>
               </div>
               <div className="subTotal">
                 <p>Tax Inclusions: </p>
@@ -67,7 +66,9 @@ const OrderDetails = () => {
               </div>
               <div className="subTotal">
                 <p>Grand Total: </p>
-                <p>{isAuthenticated ? order && (order.totalPrice).toFixed(2) : ""}</p>
+                <p>
+                  {isAuthenticated ? order && order.totalPrice.toFixed(2) : ""}
+                </p>
               </div>
             </Paper>
           </Box>
