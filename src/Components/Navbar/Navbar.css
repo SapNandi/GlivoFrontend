@@ -98,3 +98,13 @@
     position: absolute;
     top: 55px; */
 }
+
+@media screen and (max-width: 600px) {
+  .rightNav{
+    display: none!important;
+  }
+
+  .navbar{
+    justify-content: space-around;
+  }
+}

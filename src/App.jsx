@@ -11,12 +11,14 @@ import { useSelector } from "react-redux";
 import Navbar from "./Components/Navbar/Navbar";
 import Design from "./Components/Layout/Design/Design";
 import Cart from "./Components/Cart/Cart";
+import MyOrders from "./Pages/Orders/MyOrders";
+import OrderDetails from "./Pages/Orders/OrderDetails";
 
 function App() {
   // Load the user state when loggedin
   const { isAuthenticated, user } = useSelector((state) => state.user);
   useEffect(() => {
-    store.dispatch(loadUser()); 
+    store.dispatch(loadUser());
   }, []);
 
   return (
@@ -32,7 +34,9 @@ function App() {
               <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/loginSignup" element={<LoginSignUp />} />
               <Route path="/account" element={<Profile />} />
-              <Route path="/cart" element={<Cart/>} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/orders" element={<MyOrders />} />
+              <Route path="/order/:id" element={<OrderDetails/>} />
             </Route>
           </Routes>
         </BrowserRouter>

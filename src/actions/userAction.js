@@ -31,6 +31,11 @@ export const login = (email, password) => async (dispatch) => {
       { email, password },
       config
     );
+    // const { data } = await axios.post(
+    //   `http://localhost:4000/api/v1/login`,
+    //   { email, password },
+    //   config
+    // );
 
     dispatch({
       type: LOGIN_SUCCESS,
@@ -56,6 +61,11 @@ export const register = (userData) => async (dispatch) => {
       userData,
       config
     );
+    // const { data } = await axios.post(
+    //   `http://localhost:4000/api/v1/register`,
+    //   userData,
+    //   config
+    // );
 
     dispatch({
       type: REGISTER_USER_SUCCESS,
@@ -77,6 +87,9 @@ export const loadUser = () => async (dispatch) => {
     const { data } = await axios.get(`https://glivobackendnew.onrender.com/api/v1/me`, {
       withCredentials: true,
     });
+    // const { data } = await axios.get(`http://localhost:4000/api/v1/me`, {
+    //   withCredentials: true,
+    // });
 
     dispatch({ type: LOAD_USER_SUCCESS, payload: data });
   } catch (error) {
@@ -87,11 +100,12 @@ export const loadUser = () => async (dispatch) => {
 // Logout User
 export const logout = () => async (dispatch) => {
   try {
-    await axios.get(`https://glivobackendnew.onrender.com/api/v1/logout`,{withCredentials:true});
+    // await axios.get(`http://localhost:4000/api/v1/logout`, { withCredentials:true });
+    await axios.get(`https://glivobackendnew.onrender.com/api/v1/logout`, { withCredentials:true });
 
     dispatch({ type: LOGOUT_SUCCESS });
   } catch (error) {
-    dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });
+    dispatch({ type: LOGOUT_FAIL, payload: error.response.data.message });  
   }
 };
 

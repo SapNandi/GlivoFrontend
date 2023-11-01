@@ -1,0 +1,93 @@
+.orderLeft {
+  flex: 1;
+  display: flex;
+  padding: 1vmax;
+  height: 8vmax;
+  align-items: center;
+  box-sizing: border-box;
+}
+.orderLeft > img {
+  width: 5vmax;
+}
+
+.orderLeft > div {
+  display: flex;
+  margin: 0.3vmax 1vmax;
+  flex-direction: column;
+}
+
+.orderLeft > div > a {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  color: rgba(24, 24, 24, 0.815);
+  text-decoration: none;
+}
+
+.orderLeft > div > span {
+  font: 300 0.9vmax "Roboto";
+  color: rgba(24, 24, 24, 0.815);
+}
+
+.orderMiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.4;
+  /* border: 1px solid black; */
+}
+
+.orderMiddle h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.orderRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0.4;
+  /* border: 1px solid black; */
+}
+
+.orderRight h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 600px) {
+  .css-1tm7mfi {
+    width: 365px!important;
+  }
+  .orderLeft {
+    flex: .4;
+    padding: 3vmax;
+    height: 25vmax;
+    flex-direction: column;
+  }
+  .orderLeft > img {
+    width: 10vmax;
+  }
+
+  .orderLeft > div {
+    margin: 1vmax 2vmax;
+  }
+
+  .orderLeft > div > a {
+    font: 300 1.3vmax cursive;
+  }
+
+  .orderLeft > div > span {
+    font: 300 1.2vmax "Roboto";
+  }
+
+  .orderMiddle h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: .8rem;
+  }
+  .orderRight h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: .8rem;
+  }
+}

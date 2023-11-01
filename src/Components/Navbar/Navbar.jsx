@@ -74,7 +74,11 @@ const Navbar = ({ user, isAuthenticated }) => {
   }
 
   function orders() {
-    navigate("/orders");
+    if (isAuthenticated) {
+      navigate("/orders");
+    } else {
+      alert.info("Login To Access The feature");
+    }
   }
   function account() {
     if (isAuthenticated) {

@@ -57,7 +57,9 @@ const Cart = () => {
 
   const handleOrder = (order) => {
     if (!isAuthenticated) {
+      alert.error("Login To Place Order!!!");
       navigate("/loginSignup");
+      return;
     }
     dispatch(createOrder(order));
     alert.success("Order Placed Successfully!!!");

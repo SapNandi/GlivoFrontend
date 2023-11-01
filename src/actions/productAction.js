@@ -15,6 +15,7 @@ export const getProducts = () => async (dispatch) => {
       type: ALL_PRODUCT_REQUEST,
     });
     const { data } = await axios.get("https://glivobackendnew.onrender.com/api/v1/lawyer");
+    // const { data } = await axios.get("http://localhost:4000/api/v1/lawyer");
     dispatch({
       type: ALL_PRODUCT_SUCCESS,
       payload: data,
@@ -31,6 +32,9 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
+    // const { data } = await axios.get(
+    //   `http://localhost:4000/api/v1/lawyer/${id}`
+    // );
     const { data } = await axios.get(
       `https://glivobackendnew.onrender.com/api/v1/lawyer/${id}`
     );
