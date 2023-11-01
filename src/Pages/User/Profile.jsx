@@ -8,9 +8,7 @@ const Profile = () => {
   const { isAuthenticated, user, loading } = useSelector((state) => state.user);
   const navigate = useNavigate();
   useEffect(() => {
-    if (isAuthenticated === false) {
-      navigate("/");
-    } else {
+    if (isAuthenticated === true) {
       navigate("/account");
     }
     // console.log(user.user && user.user.avatar);

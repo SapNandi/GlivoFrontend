@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import Loader from "../../Components/Layout/Loader/Loader";
 import { useSelector, useDispatch } from "react-redux";
 import { Paper, Typography, Box } from "@mui/material";
@@ -13,15 +13,19 @@ const OrderDetails = () => {
   const { loading, error, order } = useSelector((state) => state.orderDetails);
   const { isAuthenticated } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const alert = useAlert();
 
   useEffect(() => {
-    if (error) {
-      alert.error(error);
-      dispatch(clearErrors());
+    if (isAuthenticated === true) {
+      if (error) {
+        alert.error(error);
+        dispatch(clearErrors());
+      }
+      dispatch(getOrderDetails(id));
+    } else {
+      navigate("/loginSignup");
     }
-
-    dispatch(getOrderDetails(id));
   }, [dispatch, alert, error, id]);
   return (
     <>
@@ -32,7 +36,8 @@ const OrderDetails = () => {
           {isAuthenticated
             ? order &&
               order.orderItems.map((item, index) => {
-                return <OrderCard key={index} item={item} order={order} />;
+                console.log(order);
+                return <OrderCard key={index} item={item} />;
               })
             : ""}
 
@@ -54,7 +59,7 @@ const OrderDetails = () => {
             >
               <div className="subTotal">
                 <p>In Total: </p>
-                <p>{isAuthenticated ? order && order.totalPrice : ""}</p>
+                <p>{isAuthenticated ? order && (order.totalPrice).toFixed(2) : ""}</p>
               </div>
               <div className="subTotal">
                 <p>Tax Inclusions: </p>
@@ -62,7 +67,7 @@ const OrderDetails = () => {
               </div>
               <div className="subTotal">
                 <p>Grand Total: </p>
-                <p>{isAuthenticated ? order && order.totalPrice : ""}</p>
+                <p>{isAuthenticated ? order && (order.totalPrice).toFixed(2) : ""}</p>
               </div>
             </Paper>
           </Box>
