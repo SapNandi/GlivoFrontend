@@ -34,10 +34,12 @@ const OrderCard = ({ item, order }) => {
             </div>
           </div>
           <div className="orderMiddle">
-            <h3>{item.quantity} X ₹{item.price}</h3>
+            <h3>
+              {item.quantity} X ₹{item.price}
+            </h3>
           </div>
           <div className="orderRight">
-          <h3>₹{(item.quantity*item.price).toFixed(2)}</h3>
+            <h3>₹{(item.quantity * item.price).toFixed(2)}</h3>
           </div>
         </Paper>
       </Box>

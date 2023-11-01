@@ -62,15 +62,17 @@ const MyOrders = () => {
   ];
   const rows = [];
 
-  orders &&
-    orders.forEach((item, index) => {
-      rows.push({
-        itemsQty: item.orderItems.length,
-        id: item._id,
-        status: item.orderStatus,
-        amount: item.totalPrice,
+  if (isAuthenticated) {
+    orders &&
+      orders.forEach((item, index) => {
+        rows.push({
+          itemsQty: item.orderItems.length,
+          id: item._id,
+          status: item.orderStatus,
+          amount: item.totalPrice,
+        });
       });
-    });
+  }
 
   useEffect(() => {
     if (error) {
