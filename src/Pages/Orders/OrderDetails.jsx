@@ -30,8 +30,7 @@ const OrderDetails = () => {
       ) : (
         <div className="orderDetails">
           {isAuthenticated
-            ? order &&
-              order.orderItems.map((item, index) => {
+            ? order.orderItems.map((item, index) => {
                 return <OrderCard key={index} item={item} order={order} />;
               })
             : ""}
