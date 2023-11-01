@@ -62,6 +62,7 @@ const Cart = () => {
     dispatch(createOrder(order));
     alert.success("Order Placed Successfully!!!");
     localStorage.clear();
+    navigate("/")
   };
 
   return (
@@ -111,10 +112,10 @@ const Cart = () => {
             <div></div>
             <div className="cartGrossProfitBox">
               <p>Gross Total</p>
-              <p>{`₹${cartItems.reduce(
+              <p>{`₹${(cartItems.reduce(
                 (acc, item) => acc + item.quantity * item.price,
                 0
-              )}`}</p>
+              )).toFixed(2)}`}</p>
             </div>
             <div></div>
             <div className="checkOutBtn">

@@ -111,14 +111,6 @@ const TicketForm = () => {
           <Button
             className="buybtn"
             variant="contained"
-            sx={{ marginTop: ".8rem" }}
-            onClick={handleSubmit}
-          >
-            Buy Ticket
-          </Button>
-          <Button
-            className="buybtn"
-            variant="contained"
             sx={{ marginTop: ".8rem", gap: "5px" }}
             onClick={handleCartSubmit}
           >
