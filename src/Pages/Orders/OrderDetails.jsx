@@ -31,13 +31,18 @@ const OrderDetails = () => {
         <Loader />
       ) : (
         <div className="orderDetails">
-          {isAuthenticated
-            ? order &&
+          {isAuthenticated ? (
+            order.orderItems.length > 0 ? (
               order.orderItems.map((item, index) => {
                 console.log(order);
                 return <OrderCard key={index} item={item} />;
               })
-            : ""}
+            ) : (
+              <OrderCard item={order && order.orderItems} />
+            )
+          ) : (
+            ""
+          )}
 
           <Box
             sx={{
