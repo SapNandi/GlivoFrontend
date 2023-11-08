@@ -35,7 +35,8 @@
 }
 
 .MuiDataGrid-columnHeader {
-  background-color: #4b1ea3;
+  background-color: rgba(0, 0, 0, 0.9);
+  /* background-color: #4b1ea3; */
   padding: 1vmax !important;
 }
 

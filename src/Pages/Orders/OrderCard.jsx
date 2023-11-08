@@ -7,7 +7,7 @@ import "./OrderCard.css";
 
 const OrderCard = ({ item}) => {
   const { isAuthenticated } = useSelector((state) => state.user);
-  console.log(item);
+  console.log(isAuthenticated ? item : "None");
   return (
     <>
       <Box

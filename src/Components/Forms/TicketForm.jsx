@@ -94,7 +94,7 @@ const TicketForm = () => {
             </RadioGroup>
           </FormControl>
           <Divider variant="middle" />
-          <Typography variant="h6" sx={{ fontSize: "1rem", color: "#4b1ea3" }}>
+          <Typography variant="h6" sx={{ fontSize: "1rem", color: "rgba(0, 0, 0, 1)" }}>
             Choose Tickets
           </Typography>
           <Slider

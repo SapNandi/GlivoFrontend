@@ -23,13 +23,13 @@ const OrderDetails = () => {
     }
     dispatch(getOrderDetails(id));
     // console.log(isAuthenticated ? order.orderItems : "");
-    // if (isAuthenticated === true) {
+    // if (isAuthenticated === true) {  
     //   dispatch(getOrderDetails(id));
     // } else {
     //   alert.info("Login to access!!!");
     //   navigate("/loginSignup");
     // }
-  }, [id, dispatch, error]);
+  }, [dispatch, alert, error, id]);
   return (
     <>
       {loading ? (
@@ -37,22 +37,10 @@ const OrderDetails = () => {
       ) : (
         <div className="orderDetails">
           {isAuthenticated
-            ? order.orderItems.map((item, index) => {
+            ? order.orderItems === {} ? (<h1>No Orders</h1>) : order && order.orderItems.map((item, index) => {
                 return <OrderCard key={index} item={item} />;
               })
             : ""}
-          {/* {isAuthenticated ? (
-            order.orderItems !== undefined ? (
-              order.orderItems.map((item, index) => {
-                return <OrderCard key={index} item={item} />;
-              })
-            ) : (
-              <OrderCard item={order && order.orderItems} />
-            )
-          ) : (
-            ""
-          )} */}
-
           <Box
             sx={{
               width: 1300,

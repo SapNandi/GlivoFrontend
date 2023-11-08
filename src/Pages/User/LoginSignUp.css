@@ -35,11 +35,13 @@
 }
 .login_signUp_toggle > p:hover {
   /* color: tomato; */
-  color: #4b1ea3;
+  color: rgba(0, 0, 0, 0.678);
+  /* color: #4b1ea3; */
 }
 
 .LoginSignUpBox > div > button {
-  background-color: #4b1ea3;
+  background-color: rgba(0, 0, 0, 0.678);
+  /* background-color: #4b1ea3; */
   /* background-color: tomato; */
   height: 3px;
   width: 50%;
@@ -135,7 +137,8 @@
 .loginBtn,
 .signUpBtn {
   border: none;
-  background-color: #4b1ea3;
+  background-color: rgba(0, 0, 0, 1);
+  /* background-color: #4b1ea3; */
   /* background-color: tomato; */
   color: white;
   font: 300 0.9vmax "Roboto";
@@ -150,7 +153,9 @@
 
 .loginBtn:hover,
 .signUpBtn:hover {
-  background-color: #38167a;
+  /* background-color: rgba(0, 0, 0, 1); */
+  background-color: rgba(0, 0, 0, 0.678);
+  /* background-color: #38167a; */
   /* background-color: rgb(179, 66, 46); */
 }
 

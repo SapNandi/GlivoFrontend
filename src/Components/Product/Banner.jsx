@@ -126,7 +126,7 @@ const Banner = ({ product }) => {
                     justifyContent: "center",
                     alignItems: "center",
                     gap: "10px",
-                    color: "#4b1ea3",
+                    color: "rgba(0, 0, 0, 1)",
                   }}
                 >Cancel</Button>
                 {/* <Button onClick={handleClose}>Agree</Button> */}

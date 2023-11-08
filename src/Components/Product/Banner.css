@@ -81,7 +81,8 @@
   font-weight: 500;
   letter-spacing: 0.6px;
   color: #fff;
-  background-color: #4b1ea3;
+  background-color: rgba(0, 0, 0, 1)!important;
+  /* background-color: #4b1ea3; */
   width: 16rem;
   padding: 1rem 10px;
   display: flex;

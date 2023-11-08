@@ -3,22 +3,42 @@
 }
 
 .css-u4tvz2-MuiFormLabel-root {
-  color: #4b1ea3 !important;
+  color: rgba(0, 0, 0, 1) !important;
+  /* color: #4b1ea3 !important; */
   font-weight: 500 !important;
   font-size: 1rem !important;
 }
 .css-ahj2mt-MuiTypography-root {
-  color: #4b1ea3;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 500 !important;
+}
+.MuiSlider-track {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+.MuiSlider-valueLabel {
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+/* .css-c1tjps-MuiSlider-thumb::after{
+  color:rgba(0, 0, 0, 1);
+} */
+
+.css-c1tjps-MuiSlider-thumb::before {
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .css-vqmohf-MuiButtonBase-root-MuiRadio-root.Mui-checked {
-  color: #4b1ea3 !important;
+  /* color: #4b1ea3 !important; */
+  color: rgba(0, 0, 0, 1) !important;
 }
 
 .buybtn {
-  background-color: rgb(248, 68, 100) !important;
+  /* background-color: rgb(248, 68, 100) !important; */
+  background-color: rgba(0, 0, 0, 1) !important;
 }
 
 .buybtn:hover {
-  background-color: rgb(232, 39, 74) !important;
+  /* background-color: rgb(232, 39, 74) !important; */
+  background-color: rgba(0, 0, 0, 0.8) !important;
 }
