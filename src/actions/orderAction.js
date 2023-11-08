@@ -24,16 +24,16 @@ export const createOrder = (order) => async (dispatch) => {
       },
       withCredentials: true,
     };
-    // const { data } = await axios.post(
-    //   "http://localhost:4000/api/v1/order/new",
-    //   order,
-    //   config
-    // );
     const { data } = await axios.post(
-      "https://glivobackendnew.onrender.com/api/v1/order/new",
+      `${import.meta.env.VITE_API_DOMAIN_DEV}order/new`,
       order,
       config
     );
+    // const { data } = await axios.post(
+    //   "https://glivobackendnew.onrender.com/api/v1/order/new",
+    //   order,
+    //   config
+    // );
 
     dispatch({ type: CREATE_ORDER_SUCCESS, payload: data });
   } catch (error) {
@@ -49,13 +49,13 @@ export const myOrders = () => async (dispatch) => {
   try {
     dispatch({ type: MY_ORDERS_REQUEST });
 
-    // const { data } = await axios.get("http://localhost:4000/api/v1/orders/me", {
-    //   withCredentials: true,
-    // });
-    const { data } = await axios.get(
-      "https://glivobackendnew.onrender.com/api/v1/orders/me",
-      { withCredentials: true }
-    );
+    const { data } = await axios.get(`${import.meta.env.VITE_API_DOMAIN_DEV}orders/me`, {
+      withCredentials: true,
+    });
+    // const { data } = await axios.get(
+    //   "https://glivobackendnew.onrender.com/api/v1/orders/me",
+    //   { withCredentials: true }
+    // );
 
     dispatch({ type: MY_ORDERS_SUCCESS, payload: data.orders });
   } catch (error) {
@@ -71,18 +71,18 @@ export const getOrderDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: ORDER_DETAILS_REQUEST });
 
-    const { data } = await axios.get(
-      `https://glivobackendnew.onrender.com/api/v1/order/${id}`,
-      {
-        withCredentials: true,
-      }
-    );
     // const { data } = await axios.get(
-    //   `http://localhost:4000/api/v1/order/${id}`,
+    //   `https://glivobackendnew.onrender.com/api/v1/order/${id}`,
     //   {
     //     withCredentials: true,
     //   }
     // );
+    const { data } = await axios.get(
+      `${import.meta.env.VITE_API_DOMAIN_DEV}order/${id}`,
+      {
+        withCredentials: true,
+      }
+    );
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });
   } catch (error) {

@@ -17,21 +17,31 @@ const OrderDetails = () => {
   const alert = useAlert();
 
   useEffect(() => {
-    console.log(order);
-    if (isAuthenticated === true) {
-      dispatch(getOrderDetails(id));
-    } else {
-      alert.info("Login to access!!!");
-      navigate("/loginSignup");
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
     }
-  }, [dispatch, loading, id]);
+    dispatch(getOrderDetails(id));
+    // console.log(isAuthenticated ? order.orderItems : "");
+    // if (isAuthenticated === true) {
+    //   dispatch(getOrderDetails(id));
+    // } else {
+    //   alert.info("Login to access!!!");
+    //   navigate("/loginSignup");
+    // }
+  }, [id, dispatch, error]);
   return (
     <>
       {loading ? (
         <Loader />
       ) : (
         <div className="orderDetails">
-          {isAuthenticated ? (
+          {isAuthenticated
+            ? order.orderItems.map((item, index) => {
+                return <OrderCard key={index} item={item} />;
+              })
+            : ""}
+          {/* {isAuthenticated ? (
             order.orderItems !== undefined ? (
               order.orderItems.map((item, index) => {
                 return <OrderCard key={index} item={item} />;
@@ -41,7 +51,7 @@ const OrderDetails = () => {
             )
           ) : (
             ""
-          )}
+          )} */}
 
           <Box
             sx={{

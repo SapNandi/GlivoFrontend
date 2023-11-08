@@ -3,14 +3,14 @@ import { ADD_TO_CART, REMOVE_CART_ITEM } from "../constants/cartConstant";
 
 // ADD TO CART
 export const addItemToCart = (id, quantity) => async (dispatch, getState) => {
-  // const { data } = await axios.get(
-  //   `http://localhost:4000/api/v1/lawyer/${id}`,
-  //   { withCredentials: true }
-  // );
   const { data } = await axios.get(
-    `https://glivobackendnew.onrender.com/api/v1/lawyer/${id}`,
+    `${import.meta.env.VITE_API_DOMAIN_DEV}lawyer/${id}`,
     { withCredentials: true }
   );
+  // const { data } = await axios.get(
+  //   `https://glivobackendnew.onrender.com/api/v1/lawyer/${id}`,
+  //   { withCredentials: true }
+  // );
 
   dispatch({
     type: ADD_TO_CART,

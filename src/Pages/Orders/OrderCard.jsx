@@ -2,9 +2,12 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import { Link } from "react-router-dom";
+import { useSelector} from "react-redux";
 import "./OrderCard.css";
 
-const OrderCard = ({ item, order }) => {
+const OrderCard = ({ item}) => {
+  const { isAuthenticated } = useSelector((state) => state.user);
+  console.log(item);
   return (
     <>
       <Box
@@ -27,10 +30,10 @@ const OrderCard = ({ item, order }) => {
           }}
         >
           <div className="orderLeft">
-            <img src={item.image} alt="ssa" />
+            <img src={isAuthenticated ? item.image : ""} alt="ssa" />
             <div>
-              <Link to={`/product/${item.product}`}>{item.name}</Link>
-              <span>{`Price: ₹${item.price}`}</span>
+              <Link to={`/product/${item.product}`}>{isAuthenticated ? item.name : ""}</Link>
+              <span>{`Price: ₹${isAuthenticated ? item.price : ""}`}</span>
             </div>
           </div>
           <div className="orderMiddle">
