@@ -102,6 +102,7 @@
   align-items: center;
 }
 
+
 .container .cardHolder {
   display: flex;
   /* margin: 2vmax auto; */
@@ -169,18 +170,25 @@
 }
 
 /* Carousel settings */
-.swiper-button-prev::after{
-  font-size: 2rem!important;
+.swiper-button-prev::after {
+  font-size: 2rem !important;
   color: #4b1ea3;
   font-weight: bold;
 }
-.swiper-button-next::after{
-  font-size: 2rem!important;
+.swiper-button-next::after {
+  font-size: 2rem !important;
   color: #4b1ea3;
   font-weight: bold;
 }
 
-.advertise{
+.carouselHeight{
+  height:30rem;
+}
+.carouselHeightResponsive{
+  height: 20rem;
+}
+
+.advertise {
   background-image: url("/Ad1.jpg");
   background-position: center;
   background-repeat: no-repeat;
@@ -222,8 +230,14 @@
   }
 }
 
-@media screen and (max-width: 500px){
-  .advertise{
+@media screen and (max-width: 500px) {
+  .advertise {
     height: 10vh;
   }
-} 
+  .banner {
+    height: 60vh;
+  }
+  .banner .bannerSlider {
+    height: 35vh;
+  }
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { getProducts } from "../../actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
 import ProductCard from "./ProductCard";
@@ -16,16 +16,32 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/parallax";
 
+function getWindowSize() {
+  const { innerWidth } = window;
+  return innerWidth;
+}
+
 const Home = () => {
   const dispatch = useDispatch();
   const { loading, error, product, productsCount } = useSelector(
     (state) => state.products
   );
+  const [windowSize, setWindowSize] = useState(getWindowSize());
+  // const [windowSize, setWindowSize] = useState(getWindowSize());
   // const { isAuthenticated, user } = useSelector((state) => state.user);
 
   useEffect(() => {
     // console.log(user);
     dispatch(getProducts());
+    function handleWindowResize() {
+      setWindowSize(getWindowSize());
+    }
+
+    window.addEventListener("resize", handleWindowResize);
+
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
   }, []);
   return (
     <>
@@ -36,9 +52,11 @@ const Home = () => {
           <div className="banner">
             <div className="bannerSlider">
               <Carousel
-                height="30rem"
+                // height="30rem"
+                // height={windowSize > "500px" ? "30rem" : "20rem"}
                 stopAutoPlayOnHover={true}
                 animation="slide"
+                className={windowSize < "500px" ? "carouselHeightResponsive" : "carouselHeight"}
               >
                 {product &&
                   product.map((item, i) => (
@@ -55,6 +73,7 @@ const Home = () => {
                     </div>
                   ))}
               </Carousel>
+              {/* <h1>{windowSize}</h1> */}
             </div>
           </div>
           <div className="container">

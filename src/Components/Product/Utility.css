@@ -9,7 +9,7 @@
 
 .bannerWrapper .content {
   width: 500px;
-  height: 300px;
+  height: 440px;
   /* border: 1px solid wheat; */
 }
 
@@ -66,4 +66,16 @@
   font-family: "Roboto", sans-serif;
   font-size: 1rem;
   transition: .2s all ease-in-out;
+}
+
+@media screen and (max-width: 500px){
+  .bannerWrapper .content{
+    height: 300px;
+  }
+  .bannerWrapper .content .title h1{
+    font-size: 1.5rem;
+  }
+  .bannerWrapper .content .title p {
+    font-size: 1rem;
+  }
 }
