@@ -37,7 +37,7 @@ const OrderDetails = () => {
       ) : (
         <div className="orderDetails">
           {isAuthenticated
-            ? order.orderItems === {} ? (<h1>No Orders</h1>) : order && order.orderItems.map((item, index) => {
+            ? order.orderItems === undefined ? (<h1>No Orders</h1>) : order && order.orderItems.map((item, index) => {
                 return <OrderCard key={index} item={item} />;
               })
             : ""}

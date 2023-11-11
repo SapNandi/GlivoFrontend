@@ -119,16 +119,21 @@
   justify-content: flex-end;
 }
 .checkOutBtn > button {
-  /* background-color: #4b1ea3; */
-  color:rgba(0, 0, 0, 0.678);
+  background-color: #121212;
+  /* color:rgba(0, 0, 0, 0.678); */
   color: white;
   border: none;
   padding: 0.8vmax 4vmax;
   width: 50%;
-  font: 300 0.8vmax "Roboto";
+  font: 500 1.1vmax "Roboto";
   margin: 1vmax 4vmax;
   cursor: pointer;
   border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.checkOutBtn > button:hover{
+  background-color: #333333;
 }
 
 @media screen and (max-width: 600px) {

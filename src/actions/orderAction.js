@@ -81,7 +81,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
       `${import.meta.env.VITE_API_DOMAIN_DEV}order/${id}`,
       {
         withCredentials: true,
-      }
+      }   
     );
 
     dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data.order });

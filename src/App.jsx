@@ -13,6 +13,10 @@ import Design from "./Components/Layout/Design/Design";
 import Cart from "./Components/Cart/Cart";
 import MyOrders from "./Pages/Orders/MyOrders";
 import OrderDetails from "./Pages/Orders/OrderDetails";
+import AdminDesign from "./Components/Layout/Admin/AdminDesign";
+import Dashboard from "./Components/Dashboard/Dashboard";
+import MySpace from "./Components/Dashboard/MySpace";
+import MyProductDetails from "./Components/Dashboard/MyProductDetails";
 
 function App() {
   // Load the user state when loggedin
@@ -37,6 +41,11 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/orders" element={<MyOrders />} />
               <Route path="/order/:id" element={<OrderDetails/>} />
+            </Route>
+            <Route element={<AdminDesign/>}>
+              <Route path="/dashboard" element={<Dashboard/>}/>
+              <Route path="/mySpace" element={<MySpace/>}/>
+              <Route path="/myProduct/:id" element={<MyProductDetails/>}/>
             </Route>
           </Routes>
         </BrowserRouter>

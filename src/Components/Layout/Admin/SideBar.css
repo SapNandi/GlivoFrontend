@@ -1,0 +1,162 @@
+.sideBar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background-color: #111;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  transition: 0.2s all ease-in-out;
+}
+
+.sideBarClose {
+  width: 110px !important;
+  transition: 0.2s all ease-in-out;
+}
+
+.barClose {
+  display: block;
+}
+
+.barOpen {
+  display: none !important;
+}
+
+.arrowChange {
+  position: absolute;
+  top: 50%;
+  left: 70px;
+  transition: 0.2s all ease-in-out;
+}
+
+.arrowChange:hover {
+  cursor: pointer;
+}
+
+.openClose {
+  position: absolute;
+  top: 33px;
+  left: 250px;
+  transition: 0.3s all ease-in-out;
+}
+
+.openClose:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  transition: 0.3s all ease-in-out;
+}
+
+.open {
+  rotate: 180deg !important;
+}
+
+.sideBar .admin_logo {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background-color: #111;
+}
+
+.sideBar .admin_logo a {
+  width: 50px;
+  height: 50px;
+}
+
+.sideBar .admin_logo a img {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.sideBar .admin_logo .content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  height: 100px;
+  padding-left: 1rem;
+  gap: 0.5rem;
+  transition: 0.3s all ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.sideBar .admin_logo .content .title {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.sideBar .admin_logo .content .subtitle {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.sideBar a {
+  width: 100%;
+  height: 65px;
+  /* background-color: #111; */
+}
+
+.sideBar a .createEvent {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 0 0 2.3rem;
+  /* background-color: #111; */
+  transition: all 0.2s;
+}
+
+.sideBar a .createEvent:hover {
+  cursor: pointer;
+  background-color: #333333;
+}
+
+.sideBar a .createEvent .sidetitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  /* transition: .2s all ease-in-out; */
+}
+.sideBar a .mySpace .sidetitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  transition: 0.3s all ease-in-out;
+  transition-delay: 0.4s;
+}
+
+.sideBar a .mySpace {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
+  align-items: center;
+  padding: 0 0 0 2.3rem;
+  transition: all 0.2s;
+}
+
+.active {
+  background-color: #333333;
+}
+
+.sideBar a .mySpace:hover {
+  cursor: pointer;
+  background-color: #333333;
+}

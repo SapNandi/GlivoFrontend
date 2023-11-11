@@ -12,7 +12,7 @@ import { login, clearError, register } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import locationData from "../../locationData.json";
 
-const LoginSignUp = ({ history, location }) => {
+const LoginSignUp = () => {
   const dispatch = useDispatch();
   const alert = useAlert();
   const navigate = useNavigate();
@@ -64,10 +64,11 @@ const LoginSignUp = ({ history, location }) => {
     e.preventDefault();
     dispatch(login(loginEmail, loginPassword));
   };
+
   const registerSubmit = (e) => {
     e.preventDefault();
 
-    console.log(countryName, stateName);
+    // console.log(countryName, stateName);
 
     const myForm = new FormData();
 
@@ -79,6 +80,7 @@ const LoginSignUp = ({ history, location }) => {
     myForm.set("avatar", avatar);
 
     dispatch(register(myForm));
+    // console.log(myForm);
   };
 
   const registerDataChange = (e) => {
@@ -102,7 +104,7 @@ const LoginSignUp = ({ history, location }) => {
       setCountryName(getcountryName);
     } else if (e.target.name === "state") {
       const statename = e.target.value;
-      console.log(statename);
+      // console.log(statename);
       setStateName(statename);
     } else {
       setLocalUser({ ...loacalUser, [e.target.name]: e.target.value });

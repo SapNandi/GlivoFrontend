@@ -30,7 +30,7 @@ const Navbar = ({ user, isAuthenticated }) => {
     {
       icon: (
         <ShoppingCartIcon
-          style={{ color: cartItems.length > 0 ? "#4b1ea3" : "unset" }}
+          style={{ color: cartItems.length > 0 ? "#121212" : "unset" }}
         />
       ),
       name: `Cart(${cartItems.length})`,
