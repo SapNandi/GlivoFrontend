@@ -18,6 +18,14 @@
   transition: all 0.1s;
 }
 
+.css-1hw9j7s{
+  background-color: #121212 !important;
+  transition: all 0.1s;
+}
+
+.css-1hw9j7s:hover {
+  background-color: #333333 !important;
+}
 .css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
   background-color: #333333 !important;
 }
@@ -85,6 +93,10 @@
   } */
 
   .css-92s7wq-MuiPaper-root {
+    height: 90vh !important;
+  }
+
+  .css-l1un3m {
     height: 90vh !important;
   }
 }

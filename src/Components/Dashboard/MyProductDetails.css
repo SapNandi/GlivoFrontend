@@ -37,3 +37,16 @@
   margin-bottom: 20px;
   text-transform: capitalize;
 }
+
+@media screen and (max-width: 600px) {
+  .myProductDetails .content .myOrdersTable {
+    width: 18rem;
+  }
+  .myProductDetails .content {
+    left: 22px;
+    padding: 0rem 0px 2rem 6rem;
+  }
+  #myOrdersHeading{
+    width: 285px!important;
+  }
+}

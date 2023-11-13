@@ -13,20 +13,25 @@ const MyProductDetails = () => {
   const { id } = useParams();
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    {
+      field: "id",
+      headerName: "Order ID",
+      minWidth: window.innerWidth < 600 ? 100 : 300,
+      flex: window.innerWidth < 600 ? 0.2 : 1,
+    },
 
     {
       field: "name",
       headerName: "Name",
-      minWidth: 150,
-      flex: 0.5,
+      minWidth: window.innerWidth < 600 ? 50 : 150,
+      flex: window.innerWidth < 600 ? 0.2 : 0.5,
     },
     {
       field: "email",
       headerName: "Email",
-      type: "number",
-      minWidth: 150,
-      flex: 0.5,
+      type: window.innerWidth < 600 ? "" : "number",
+      minWidth: window.innerWidth < 600 ? 50 : 150,
+      flex: window.innerWidth < 600 ? 0.2 : 0.5,
     },
   ];
   const rows = [];
