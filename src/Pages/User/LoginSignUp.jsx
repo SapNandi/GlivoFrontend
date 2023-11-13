@@ -119,8 +119,8 @@ const LoginSignUp = () => {
 
   useEffect(() => {
     if (error) {
+      alert.info(error);
       dispatch(clearError());
-      // alert.info(error);
     }
 
     if (isAuthenticated) {
@@ -176,8 +176,8 @@ const LoginSignUp = () => {
                   placeholder="Password"
                   required
                   name="password"
-                  value={password}
-                  onChange={registerDataChange}
+                  value={loginPassword}
+                  onChange={(e) => setLoginPassword(e.target.value)}
                 />
                 <div id="eyeContainer" onClick={handleShow}>
                   {show ? (
