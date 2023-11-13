@@ -71,7 +71,18 @@
   width: 100%;
   align-items: center;
   margin-bottom: 6px;
+  position: relative;
 }
+
+#eyeContainer{
+  position: absolute;
+  right:1rem;
+  transition: all ease-in-out 500ms;
+}
+#eyeContainer:hover{
+  cursor: pointer;
+}
+
 .loginForm > div > input,
 .signUpForm > div > input,
 .signUpForm > div > select {
@@ -183,6 +194,11 @@
     height: 90vh;
     margin-top: 17rem;
   }
+
+  #eyeContainer{
+    right: 0.8rem
+  }
+
   .login_signUp_toggle {
     height: 5vmax;
   }
@@ -198,7 +214,7 @@
   .loginForm > div > input,
   .signUpForm > div > input {
     padding: 2.5vmax 5vmax;
-    font: 300 1.7vmax cursive;
+    font: 300 1.7vmax "Roboto";
   }
 
   .loginForm > div > svg,
@@ -217,7 +233,7 @@
 
   #registerImage > input::file-selector-button {
     height: 7vh;
-    font: 400 1.8vmax cursive;
+    font: 400 1.8vmax "Roboto";
   }
 
   .loginBtn,

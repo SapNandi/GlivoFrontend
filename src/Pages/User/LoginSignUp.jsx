@@ -6,6 +6,8 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 import FaceIcon from "@mui/icons-material/Face";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { AiFillEye } from "react-icons/ai";
+import { AiFillEyeInvisible } from "react-icons/ai";
 import { useSelector, useDispatch } from "react-redux";
 // import Cookies from "universal-cookie";
 import { login, clearError, register } from "../../actions/userAction";
@@ -26,6 +28,10 @@ const LoginSignUp = () => {
   const registerTab = useRef(null);
   const switcherTab = useRef(null);
 
+  const [show, setShow] = useState(false);
+  const handleShow = () => {
+    setShow(!show);
+  };
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
 
@@ -166,12 +172,30 @@ const LoginSignUp = () => {
               <div className="loginPassword">
                 <LockOpenIcon />
                 <input
-                  type="password"
+                  type={show ? "text" : "password"}
                   placeholder="Password"
                   required
-                  value={loginPassword}
-                  onChange={(e) => setLoginPassword(e.target.value)}
+                  name="password"
+                  value={password}
+                  onChange={registerDataChange}
                 />
+                <div id="eyeContainer" onClick={handleShow}>
+                  {show ? (
+                    <AiFillEye
+                      style={{
+                        fontSize: "1.8rem",
+                        color: "rgba(0, 0, 0, 0.623)",
+                      }}
+                    />
+                  ) : (
+                    <AiFillEyeInvisible
+                      style={{
+                        fontSize: "1.8rem",
+                        color: "rgba(0, 0, 0, 0.623)",
+                      }}
+                    />
+                  )}
+                </div>
               </div>
               <Link
                 to="/password/forgot"
@@ -212,13 +236,30 @@ const LoginSignUp = () => {
               <div className="signUpPassword">
                 <LockOpenIcon />
                 <input
-                  type="password"
+                  type={show ? "text" : "password"}
                   placeholder="Password"
                   required
                   name="password"
                   value={password}
                   onChange={registerDataChange}
                 />
+                <div id="eyeContainer" onClick={handleShow}>
+                  {show ? (
+                    <AiFillEye
+                      style={{
+                        fontSize: "1.8rem",
+                        color: "rgba(0, 0, 0, 0.623)",
+                      }}
+                    />
+                  ) : (
+                    <AiFillEyeInvisible
+                      style={{
+                        fontSize: "1.8rem",
+                        color: "rgba(0, 0, 0, 0.623)",
+                      }}
+                    />
+                  )}
+                </div>
               </div>
               <div className="country">
                 <LocationOnIcon />
