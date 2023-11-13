@@ -58,7 +58,7 @@ const Navbar = ({ user, isAuthenticated }) => {
     });
   }
 
-  if (role === "admin") {
+  if (role === "admin" || role === "seller") {
     options.unshift({
       icon: <DashboardIcon />,
       name: "Dashboard",
@@ -67,7 +67,7 @@ const Navbar = ({ user, isAuthenticated }) => {
   }
 
   function dashboard() {
-    navigate("/dashboard");
+    navigate("/mySpace");
   }
   function cart() {
     navigate("/cart");
@@ -104,7 +104,7 @@ const Navbar = ({ user, isAuthenticated }) => {
       <div className="leftNav">
         <div className="Logo" style={{ marginRight: "3.3rem" }}>
           <Link to="/" style={{ textDecoration: "none" }}>
-            <img src="/logo.png" alt="" />
+            <img src="/Glivo.jpg" alt="" />
           </Link>
         </div>
       </div>

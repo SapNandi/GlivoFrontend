@@ -69,11 +69,11 @@
   }
 
   .orderLeft > div {
-    margin: 1vmax 2vmax;
+    margin: 1vmax 0vmax;
   }
 
   .orderLeft > div > a {
-    font: 300 1.3vmax cursive;
+    font: 300 1.3vmax "Roboto";
   }
 
   .orderLeft > div > span {

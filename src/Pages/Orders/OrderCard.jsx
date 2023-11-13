@@ -33,7 +33,7 @@ const OrderCard = ({ item}) => {
             <img src={isAuthenticated ? item.image : ""} alt="ssa" />
             <div>
               <Link to={`/product/${item.product}`}>{isAuthenticated ? item.name : ""}</Link>
-              <span>{`Price: ₹${isAuthenticated ? item.price : ""}`}</span>
+              {/* <span>{`Price: ₹${isAuthenticated ? item.price : ""}`}</span> */}
             </div>
           </div>
           <div className="orderMiddle">

@@ -9,7 +9,7 @@ import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 const SideBar = () => {
   const [active, setActive] = useState("");
   const pathName = useLocation();
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(window.innerWidth <= 500 ? true : false);
 
   const handleClick = () => {
     setOpen(!open);
@@ -42,6 +42,16 @@ const SideBar = () => {
           <p className="subtitle">Music Production</p>
         </div>
       </div>
+      <Link to={"/mySpace"}>
+        <div className={active === "mySpace" ? "mySpace active" : "mySpace"}>
+          <span>
+            <IoEye style={{ fontSize: "1.8rem" }} />{" "}
+          </span>
+          <h3 className={open ? "sidetitle barOpen" : "sidetitle barClose"}>
+            My Space
+          </h3>
+        </div>
+      </Link>
       <Link to={"/dashboard"}>
         <div
           className={
@@ -51,15 +61,9 @@ const SideBar = () => {
           <span>
             <IoFlask style={{ fontSize: "1.8rem" }} />{" "}
           </span>
-          <h3 className={open ? "sidetitle barOpen" : "sidetitle barClose"}>Create Event</h3>
-        </div>
-      </Link>
-      <Link to={"/mySpace"}>
-        <div className={active === "mySpace" ? "mySpace active" : "mySpace"}>
-          <span>
-            <IoEye style={{ fontSize: "1.8rem" }} />{" "}
-          </span>
-          <h3 className={open ? "sidetitle barOpen" : "sidetitle barClose"}>My Space</h3>
+          <h3 className={open ? "sidetitle barOpen" : "sidetitle barClose"}>
+            Create Event
+          </h3>
         </div>
       </Link>
     </div>

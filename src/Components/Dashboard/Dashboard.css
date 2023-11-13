@@ -13,13 +13,13 @@
   padding: 50px 0px 0px 80px;
   width: 100%;
 }
-.css-sghohy-MuiButtonBase-root-MuiButton-root{
-    background-color: #121212!important;
-    transition: all 0.1s;
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  background-color: #121212 !important;
+  transition: all 0.1s;
 }
 
-.css-sghohy-MuiButtonBase-root-MuiButton-root:hover{
-    background-color: #333333!important;
+.css-sghohy-MuiButtonBase-root-MuiButton-root:hover {
+  background-color: #333333 !important;
 }
 
 .preview {
@@ -28,12 +28,63 @@
   margin-right: 5px;
 }
 
-.short{
-    width: 20rem!important;
+.short {
+  width: 20rem !important;
 }
-.veryShort{
-    width: 10rem!important;
+.veryShort {
+  width: 10rem !important;
 }
-.medium{
-    width: 14rem!important;
+.medium {
+  width: 14rem !important;
+}
+
+@media screen and (max-width: 600px) {
+  .Dashboard .content {
+    left: 37px;
+  }
+
+  .short {
+    width: 10rem !important;
+  }
+
+  #btngrp {
+    flex-direction: column;
+    gap: 1rem !important;
+  }
+
+  #btnText {
+    font-size: 0.6rem !important;
+  }
+
+  .preview {
+    width: 3vmax;
+    border-radius: 100%;
+    margin-right: 5px;
+  }
+  .medium {
+    width: 10rem !important;
+  }
+
+  #registerBtnContainer {
+    margin-left: 1rem !important;
+  }
+
+  #registerBtn {
+    width: 160px;
+    height: 40px;
+    font-size: 0.8rem;
+  }
+
+  .med {
+    margin: 7px!important;
+    width: 13rem!important;
+  }
+  /* .css-10ricfx .MuiTextField-root {
+    margin: 7px!important;
+    width: 13rem!important;
+  } */
+
+  .css-92s7wq-MuiPaper-root {
+    height: 90vh !important;
+  }
 }

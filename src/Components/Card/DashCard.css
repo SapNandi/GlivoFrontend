@@ -1,0 +1,178 @@
+.dashcard {
+  width: 345px;
+  height: 200px;
+  padding: 10px;
+  border-radius: 30px;
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #383838;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  /* gap: 10rem; */
+}
+
+.dashcard .dashleft {
+  flex: 0.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center ; */
+  /* gap: 10px; */
+  height: 100%;
+  padding: 10px 0 0 10px;
+  width: 100%;
+  /* border: 1px solid black; */
+  line-height: 2.3rem;
+}
+
+.dashcard .dashleft p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #ffffff97;
+}
+
+.dashcard .dashleft small {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-left: 10px;
+  font-size: 0.7rem;
+  color: #ffffff97;
+}
+
+.dashcard .dashleft h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  margin-left: 10px;
+  font-size: 3rem;
+  color: #fff;
+}
+
+.dashcard .dashright {
+  flex: 0.4;
+  display: flex;
+  /* border: 1px solid black; */
+  justify-content: center;
+  padding-top: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.dashcard .dashright .cicular_progress {
+  position: relative;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  background-image: conic-gradient(#fff 3.6deg, #5b5858b2 0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-image ease-in-out 500ms;
+}
+
+.dashcard .dashright .cicular_progress::before {
+  position: absolute;
+  content: "";
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: #383838;
+}
+
+.dashcard .dashright .cicular_progress .progress {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.normaldashleft {
+  display: flex;
+  flex: 0.4;
+  /* border: 1px solid white; */
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.normaldashleft .cover {
+  width: 80px;
+  height: 80px;
+  padding: 20px;
+  /* opacity: .5; */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4e5257;
+}
+
+.normaldashright {
+  display: flex;
+  flex: 0.5;
+  /* border: 1px solid white; */
+  height: 100%;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.normaldashright p {
+  color: #ffffff97;
+  font-family: "Roboto", sans-serif;
+}
+.normaldashright h1 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 600px){
+  .dashcard {
+    width: 250px ;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .dashcard {
+    width: 230px ;
+    height: 200px;
+  }
+
+  .dashcard .dashleft h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    margin-left: 10px;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .normaldashright h1 {
+    font-size: 1.5rem;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .normaldashright p {
+    font-size: 0.9rem;
+  }
+
+  .normaldashleft .cover {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+  }
+
+  .dashcard .dashright .cicular_progress {
+    height: 60px ;
+    width: 60px ;
+  }
+  .dashcard .dashright .cicular_progress::before {
+    height: 40px;
+    width: 40px ;
+  }
+}

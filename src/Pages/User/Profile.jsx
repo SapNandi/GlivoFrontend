@@ -19,7 +19,7 @@ const Profile = () => {
         <Loader />
       ) : (
         <div className="profileContainer">
-          <div>
+          <div id="profileContainer">
             <h1>My Profile</h1>
             <img
               src={isAuthenticated ? user.user.avatar.url : "/Profile.png"}

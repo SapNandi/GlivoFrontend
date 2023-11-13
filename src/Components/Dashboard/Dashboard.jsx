@@ -216,6 +216,7 @@ const Dashboard = () => {
                     name="name"
                     value={name}
                     onChange={registerDataChange}
+                    className="med"
                     //   defaultValue="Event Name"
                   />
                   <TextField
@@ -227,6 +228,7 @@ const Dashboard = () => {
                     onChange={registerDataChange}
                     //   defaultValue="Event Description"
                     maxRows={4}
+                    className="med"
                   />
                 </div>
                 <div style={{ marginBottom: "1.2rem" }}>
@@ -302,7 +304,7 @@ const Dashboard = () => {
                     ))}
                   </TextField>
                 </div>
-                <div style={{ display: "flex", gap: "5rem" }}>
+                <div id="btngrp" style={{ display: "flex", gap: "5rem" }}>
                   <div style={{ display: "flex" }}>
                     <img
                       className="preview"
@@ -313,6 +315,7 @@ const Dashboard = () => {
                       component="label"
                       variant="contained"
                       startIcon={<CloudUploadIcon />}
+                      id="btnText"
                     >
                       Event Image
                       <VisuallyHiddenInput
@@ -333,6 +336,7 @@ const Dashboard = () => {
                       component="label"
                       variant="contained"
                       startIcon={<CloudUploadIcon />}
+                      id="btnText"
                     >
                       Background Image
                       <VisuallyHiddenInput
@@ -350,6 +354,7 @@ const Dashboard = () => {
                     marginTop: "2rem",
                     marginLeft: "50rem",
                   }}
+                  id="registerBtnContainer"
                 >
                   {/* <input type="submit" value="Register" /> */}
                   <Button
@@ -357,6 +362,7 @@ const Dashboard = () => {
                     variant="contained"
                     sx={{ padding: "15px 30px" }}
                     onClick={registerSubmit}
+                    id="registerBtn"
                   >
                     CREATE EVENT
                   </Button>

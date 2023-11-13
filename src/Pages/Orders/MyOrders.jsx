@@ -17,13 +17,18 @@ const MyOrders = () => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
 
   const columns = [
-    { field: "id", headerName: "Order ID", minWidth: 300, flex: 1 },
+    {
+      field: "id",
+      headerName: "Order ID",
+      minWidth: window.innerWidth < 600 ? 40 : 300,
+      flex: window.innerWidth < 600 ? 0.2 : 1,
+    },
 
     {
       field: "status",
       headerName: "Status",
-      minWidth: 150,
-      flex: 0.5,
+      minWidth: window.innerWidth < 600 ? 50 : 150,
+      flex: window.innerWidth < 600 ? 0.2 : 0.5,
       cellClassName: (params) => {
         return params.row.status === "Completed" ? "greenColor" : "redColor";
       },
@@ -31,25 +36,27 @@ const MyOrders = () => {
     {
       field: "itemsQty",
       headerName: "Items Qty",
-      type: "number",
-      minWidth: 150,
-      flex: 0.3,
+      type: window.innerWidth < 600 ? "" : "number",
+      minWidth: window.innerWidth < 600 ? 50 : 150,
+      flex: window.innerWidth < 600 ? 0.2 : 0.3,
     },
 
     {
       field: "amount",
       headerName: "Amount",
-      type: "number",
-      minWidth: 270,
-      flex: 0.5,
+      type: window.innerWidth < 600 ? "" : "number",
+      // type: "number",
+      minWidth: window.innerWidth < 600 ? 70 : 270,
+      flex: window.innerWidth < 600 ? 0.2 : 0.5,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: window.innerWidth < 600 ? 0.1 : 0.3,
       headerName: "Actions",
-      minWidth: 150,
-      type: "number",
+      minWidth: window.innerWidth < 600 ? 50 : 150,
+      // type: "number",
+      type: window.innerWidth < 600 ? "" : "number",
       sortable: false,
       renderCell: (params) => {
         return (
@@ -94,7 +101,7 @@ const MyOrders = () => {
             pageSize={10}
             disableSelectionOnClick
             className="myOrdersTable"
-            autoHeight
+            // autoHeight
           />
           <Typography id="myOrdersHeading">
             {isAuthenticated ? user.user.name : ""}'s Orders

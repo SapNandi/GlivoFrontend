@@ -55,21 +55,30 @@
     height: 93vh;
   }
 
+  .myOrdersTable{
+    width: 400px;
+  }
+
   #myOrdersHeading {
     font: 400 2.2vmax "Roboto";
     padding: 4vw;
+    width: 400px!important;
   }
 
-  .myOrdersTable div {
+  /* .myOrdersTable div {
     font: 300 4vw "Roboto";
-  }
+  } */
 
   .MuiDataGrid-columnHeader {
-    padding: 20px !important;
+    padding: 0px !important;
   }
 
   .MuiDataGrid-columnHeader div {
     font: 500 5vw "Roboto" !important;
+  }
+
+  .myOrdersTable div{
+    font-size: .7rem!important;
   }
 }
 

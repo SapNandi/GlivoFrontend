@@ -1,4 +1,5 @@
 import React from "react";
+import "./DashBoardCard.css";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
@@ -7,6 +8,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Profile from "../../assets/Profile.png";
 
 const DashBoardCard = ({ item, isAuthenticated }) => {
   const navigate = useNavigate();
@@ -19,7 +21,13 @@ const DashBoardCard = ({ item, isAuthenticated }) => {
         component="img"
         alt="green iguana"
         height="200"
-        image={isAuthenticated ? item.bgImage && item.bgImage.url : "/Profile.png"}
+        image={
+          isAuthenticated
+            ? item.bgImage && item.bgImage.url
+              ? item.bgImage.url
+              : Profile
+            : Profile
+        }
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
